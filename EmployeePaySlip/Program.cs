@@ -25,10 +25,10 @@ namespace EmployeePaySlip
           
             var paySlips = GetPaySlips(employeeDetails);
 
-            var isSuccess = paySlipGenerator.PrintPaySlip(paySlips);
-            if (isSuccess)
+            var filePath = paySlipGenerator.PrintPaySlip(paySlips);
+            if (!string.IsNullOrEmpty(filePath))
             {
-                Console.WriteLine("Payslips are generated successfully");
+                Console.WriteLine("Payslips are generated successfully in {0}", filePath);
             }
         }
 

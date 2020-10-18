@@ -16,11 +16,12 @@ namespace EmployeePaySlip.Services
             _fileConfig = fileConfig;
         }
 
-        public bool PrintPaySlip(List<PaySlip> paySlips)
+        public string PrintPaySlip(List<PaySlip> paySlips)
         {
             try
             {
                 var fileName = _fileConfig.EmployeeOutputFile;
+                string fileGeneratedPath;
                 if (string.IsNullOrEmpty(fileName))
                 {
                     throw new Exception("File path is not setup for payslip generation");
@@ -28,10 +29,11 @@ namespace EmployeePaySlip.Services
                 using (var sw = new StreamWriter(fileName, false, new UTF8Encoding(true)))
                 using (var cw = new CsvWriter(sw, System.Globalization.CultureInfo.CurrentCulture))
                 {
+                    fileGeneratedPath = ((FileStream) (sw.BaseStream)).Name;
                     cw.WriteRecords(paySlips);
                 }
 
-                return true;
+                return fileGeneratedPath;
             }
             catch (Exception e)
             {

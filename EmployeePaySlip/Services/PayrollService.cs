@@ -14,6 +14,7 @@ namespace EmployeePaySlip.Services
 
         public PaySlip GeneratePaySlip(Employee employee)
         {
+            if(employee == null) throw new Exception("Employee details is not setup");
             var paySlip = new PaySlip
             {
                 Name = string.Concat(employee.FirstName, " ", employee.LastName),

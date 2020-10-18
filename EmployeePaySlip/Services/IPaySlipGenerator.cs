@@ -5,6 +5,6 @@ namespace EmployeePaySlip.Services
 {
     public interface IPaySlipGenerator
     {
-        bool PrintPaySlip(List<PaySlip> paySlips);
+        string PrintPaySlip(List<PaySlip> paySlips);
     }
 }

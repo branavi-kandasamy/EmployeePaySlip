@@ -44,7 +44,7 @@ namespace EmployeePaySlip.Test.Services
                 }
             };
 
-            Assert.True(_paySlipGenerator.PrintPaySlip(paySlips));
+            Assert.NotEmpty(_paySlipGenerator.PrintPaySlip(paySlips));
         }
 
         [Fact]
