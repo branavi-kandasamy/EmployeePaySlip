@@ -1,12 +1,8 @@
 # EmployeePaySlip
- 
-This is developed in .NET Core Console App. Please follow the instruction below to run the application
- 
-- Clone to local
-- Open solution in Visual Studio
-- Restore Nuget Packages
-- Run in debug mode
+
+This is developed in .NET Core 2.2. Please make sure target framework is v2.2 when running the application
 
 # Assumptions
-- Tax data defined for each range is stored in a csv file. The file name of the file is stored in appSettings.json
-- Final output is generated to a csv file. The path of that file is also configurable via appSettings.json
+- Tax data is stored in a csv file. Path of that file is defined in appSettings.json
+- Output of payslips is generated in a csv file, that path is also configurable in appSettings.json
+
