@@ -28,7 +28,7 @@ namespace EmployeePaySlip.Test.Services
         public void Should_Throw_Exception_When_PaySlipOutputFile_Is_Valid()
         {
             var config = new ConfigurationBuilder().Build();
-            var fileConfig = new FileConfig(config) {EmployeeOutputFile = "C:/Output.csv"};
+            var fileConfig = new FileConfig(config) {EmployeeOutputFile = "Output.csv"};
 
             _paySlipGenerator = new PaySlipGenerator(fileConfig);
 
